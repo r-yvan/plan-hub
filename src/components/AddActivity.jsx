@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const AddActivity = () => {
   const [time, setTime] = useState("");
   const [description, setDescription] = useState("");
   const [activities, setActivities] = useState([]);
+  const navigate = useNavigate();
 
   axios
     .get("http://localhost:3000/api/activities")
@@ -17,13 +19,14 @@ const AddActivity = () => {
         <h1 className="text-5xl font-semibold mb-4">Add Activity</h1>
       </div>
       <form
-        onSubmit={() =>
+        onSubmit={() => {
           axios.post("http://localhost:3000/api/activities", {
             id: activities.length + 1,
             description: description,
             time: time,
-          })
-        }
+          });
+          navigate("/activities");
+        }}
         className="flex flex-col w-full"
       >
         <div>
