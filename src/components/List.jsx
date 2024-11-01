@@ -3,32 +3,34 @@ import axios from "axios";
 
 const List = ({ activities }) => {
   return (
-    <div className="flex font-body bg-[#101010] w-3/6 p-8 rounded-r-lg overflow-scroll scroll-none justify-center">
-      <h1 className="text-5xl justify-center font-semibold mb-4">Activities</h1>
+    <div className="flex flex-col font-body bg-[#101010] w-3/6 p-8 rounded-r-lg overflow-scroll scroll-none justify-center">
+      <div>
+        <h1 className="text-5xl flex justify-center font-semibold mb-12">
+          Activities
+        </h1>
+      </div>
       {activities.map((activity) => (
         <div
           key={activity.id}
-          className="drop-shadow grid grid-cols-7 gap-3 font-normal text-lg bg-white rounded-lg py-5 px-5 ml-2 mb-3 relative flex-3 duration-200 ease-out hover:scale-a-little-bit"
+          className="flex flex-row items-center justify-between text-lg bg-[#151515] mb-2 border-2 border-[#303030] rounded-lg py-2 px-2 duration-200 ease-out"
         >
-          <p className="border-l-4 border-l-blue-600 pl-8 pt-2">
-            {activity.id}
-          </p>
-          <p className="col-span-4 pt-2">{activity.description}</p>
-          <p className="pt-2">{activity.time}</p>
-          <button
-            className="px-4 py-2 bg-red-900 z-10 rounded-full text-white font-bold active:bg-blue-700 hover:scale-105 duration-300 ease-out"
-            onClick={() => {
-              axios.delete(
-                "http://localhost:3000/api/activities/" + activity.id
-              );
-            }}
-          >
-            Delete
-          </button>
-          <img
-            className="inline absolute bottom-2 right-2 w-12 shadow-2xl"
-            src="./upt.png"
-          />
+          <div className="flex w-1/2 justify-between items-center ml-4 space-x-8">
+            <p>{activity.id}</p>
+            <p className="overflow-x-scroll">{activity.description}</p>
+            <p>{activity.time}</p>
+          </div>
+          <div className="flex justify-end">
+            <button
+              className="px-4 py-[5px] bg-white rounded-md text-black hover:scale-105 duration-300 ease-out"
+              onClick={() => {
+                axios.delete(
+                  "http://localhost:3000/api/activities/" + activity.id
+                );
+              }}
+            >
+              Delete
+            </button>
+          </div>
         </div>
       ))}
     </div>
