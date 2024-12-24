@@ -4,7 +4,7 @@ import axios from "axios";
 const List = ({ activities }) => {
   return (
     <div>
-      <div className="font-body bg-slate-200 h-full p-8 ml-2 rounded-lg overflow-scroll scroll-none justify-center">
+      <div className="font-body bg-slate-200 h-full w-full p-8 ml-2 rounded-lg overflow-scroll scroll-none justify-center">
         <h1 className="text-5xl pl-32 font-semibold mb-4">
           Activities
         </h1>
