@@ -16,7 +16,7 @@ const App = () => {
     .catch((err) => console.log(err.message));
 
   return (
-    <div className="w-real-full h-height-2 flex flex-row p-2">
+    <div className="w-full h-full flex flex-row justify-center p-2 text-white bg-[#010101]">
       <Navbar
         onAddActivity={() => {
           setPostUi(!postUi);

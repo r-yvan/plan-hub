@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = ({ onAddActivity }) => {
   return (
-    <div className="bg-slate-200 w-44 h-h-36 pt-2 rounded-lg flex flex-col items-end pr-2 font-body">
+    <div className="bg-[#202020] w-44 rounded-l-lg flex flex-col items-end pr-2 font-body pt-20">
       <button className="rounded-tl-lg rounded-bl-lg px-8 py-2 flex items-center space-x-2 duration-200 ease-out hover:border-r-4 hover:border-blue-500">
         <p className="font-normal
         ">Home</p>
