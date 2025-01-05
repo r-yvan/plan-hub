@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const List = () => {
+const Activities = () => {
   const [activities, setActivities] = useState([]);
   const fetchActivities = async () => {
     activitiesList = await axios
@@ -50,4 +50,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default Activities;

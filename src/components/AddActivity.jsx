@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Form = () => {
+const AddActivity = () => {
   const [time, setTime] = useState("");
   const [description, setDescription] = useState("");
   const [activities, setActivities] = useState([]);
@@ -61,4 +61,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default AddActivity;
