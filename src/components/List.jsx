@@ -1,7 +1,20 @@
 import React from "react";
 import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const List = ({ activities }) => {
+const List = () => {
+  const [activities, setActivities] = useState([]);
+  const fetchActivities = async () => {
+    activitiesList = await axios
+      .get("http://localhost:3000/api/activities")
+      .then((result) => setActivities(result))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetchActivities();
+  }, [])
   return (
     <div className="flex flex-col font-body bg-[#101010] w-3/6 p-8 rounded-r-lg overflow-scroll scroll-none justify-center">
       <div>
