@@ -1,11 +1,10 @@
+import React, { useState } from "react";
+import axios from "axios";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Link from "react-router-dom";
+import Form from "./Form";
 import Navbar from "./Navbar";
 import List from "./List";
-import { act, useState } from "react";
-import { produce } from "immer";
-import axios from "axios";
-import { set } from "mongoose";
-import Form from "./Form";
-import Link from "react-router-dom";
 
 const App = () => {
   const [activities, setActivities] = useState([]);
@@ -23,7 +22,15 @@ const App = () => {
           setPostUi(!postUi);
         }}
       />
-      {postUi ? <Form /> : <List activities={activities} />}
+      <Router>
+        <Routes>
+          <Route path="/">
+            <Route index path="/activities" />
+            <Route index path="/add-activities" />
+            <Route index path="/activities" />
+          </Route>
+        </Routes>
+      </Router>
     </div>
   );
 };
