@@ -1,11 +1,11 @@
 import React from "react";
+import Link from "react-router-dom";
 
 const Navbar = ({ onAddActivity }) => {
   return (
     <div className="bg-[#202020] w-44 rounded-l-lg flex flex-col items-end pr-2 font-body pt-20">
       <button className="rounded-tl-lg rounded-bl-lg px-8 py-2 flex items-center space-x-2 duration-200 ease-out hover:border-r-4 hover:border-blue-500">
-        <p className="font-normal
-        ">Home</p>
+        <p className="font-normal">Home</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -38,7 +38,10 @@ const Navbar = ({ onAddActivity }) => {
           />
         </svg>
       </button>
-      <button onClick={() => onAddActivity()} className="rounded-tl-lg rounded-bl-lg px-8 py-2 flex items-center space-x-2 duration-200 ease-out hover:border-r-4 hover:border-blue-500">
+      <button
+        onClick={() => onAddActivity()}
+        className="rounded-tl-lg rounded-bl-lg px-8 py-2 flex items-center space-x-2 duration-200 ease-out hover:border-r-4 hover:border-blue-500"
+      >
         <p className="font-normal">Add</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
