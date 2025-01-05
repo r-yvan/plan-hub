@@ -5,6 +5,7 @@ import Link from "react-router-dom";
 import Form from "./Form";
 import Navbar from "./Navbar";
 import List from "./List";
+import Layout from "./Layout";
 
 const App = () => {
   const [activities, setActivities] = useState([]);
@@ -24,10 +25,10 @@ const App = () => {
       />
       <Router>
         <Routes>
-          <Route path="/">
-            <Route index path="/activities" />
-            <Route index path="/add-activities" />
-            <Route index path="/activities" />
+          <Route path="/" element={<Layout />}>
+            <Route path="/home" element={}/>
+            <Route index path="/activities" element={<List />} />
+            <Route path="/add-activities" element={<Form />} />
           </Route>
         </Routes>
       </Router>
