@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Form from "./Form";
-import List from "./List";
+import Form from "./AddActivity";
+import List from "./Activities";
 import Layout from "./Layout";
 import Home from "./Home";
 
@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/activities" element={<List />} />
-            <Route path="/add-activities" element={<Form />} />
+            <Route path="/add-activity" element={<Form />} />
           </Route>
         </Routes>
       </Router>

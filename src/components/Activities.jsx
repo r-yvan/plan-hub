@@ -16,7 +16,7 @@ const List = () => {
     fetchActivities();
   }, [])
   return (
-    <div className="flex flex-col font-body bg-[#101010] w-3/6 p-8 rounded-r-lg overflow-scroll scroll-none justify-center">
+    <div className="flex flex-col font-body bg-[#101010] w-3/6 p-8 rounded-r-lg overflow-scroll scroll-none">
       <div>
         <h1 className="text-5xl flex justify-center font-semibold mb-12">
           Activities
